@@ -126,7 +126,7 @@ void DoubleFitter::Fit( TVirtualFitter *minuit ) {
 }
 //=======================================================
 void DoubleFitter::SaveAs( string out ) {
-  ofstream fout;
+  std::ofstream fout;
   fout.open( out.data() );
   fout << Form( "%s\n", out.data() );
   fout << Form( "minFit  %f\n", fMinFit );
@@ -140,7 +140,7 @@ void DoubleFitter::SaveAs( string out ) {
 }
 //=======================================================
 void DoubleFitter::LoadFrom( string in ) {
-  ifstream fin;
+  std::ifstream fin;
   fin.open( in.data() );
   string name;
   double val, err;
@@ -168,7 +168,7 @@ void DoubleFitter::LoadFrom( string in ) {
 }
 //=======================================================
 void DoubleFitter::LoadIni( string in ) {
-  ifstream fin;
+  std::ifstream fin;
   fin.open( in.data() );
   string name;
   double val1, val2, val3;
@@ -197,7 +197,7 @@ void DoubleFitter::LoadIni( string in ) {
 }
 //=======================================================
 void DoubleFitter::Print( string out ) {
-  ofstream fout;
+  std::ofstream fout;
   fout.open( out.data() );
   fout << Form( "fMinFit  %f\n", fMinFit );
   fout << Form( "fMaxFit  %f\n", fMaxFit );
